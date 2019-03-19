@@ -1,6 +1,7 @@
 # heregex
-ES6 tagged template to make regular expressions more easily readable. Add
-comments using the "#" character prefixed with a space. All whitespace gets
+ES6 tagged template to make regular expressions more easily readable.
+
+Add comments using the `#` character prefixed with a space. All whitespace gets
 removed (so use \s for actual whitespace matching). Any flags go in `${'gim'}`
 at the end of the string.
 
@@ -66,10 +67,11 @@ global.heregex = require('heregex');
 ## Questions
 
 ##### How do I make a literal `#`?
-For heregex to consider something a comment, it must have a space before the `#`
-or be the first character on a new line. Get rid of any whitespace immediately
-preceding it. If you need the space, escape it to `\#`. `\#` gets passed
-through directly as `\#`. This is not an issue, since an escaped `#` is still `#`.
+Get rid of any whitespace immediately preceding it. For heregex to consider
+something a comment, it must have a space before the `#` or be the first
+character on a new line. If you need the space or if its the first character on
+a new line, escape it to `\#`. `\#` gets passed through directly as `\#`.
+This is not an issue, since an escaped `#` is still `#`.
 
 ```js
 let regex_basic_css_selector = heregex`
@@ -79,7 +81,7 @@ let regex_basic_css_selector = heregex`
   ${'i'}
 `;
 ```
-which compiles to:
+which evaluates to:
 ```js
 /\.([_a-z][_a-z0-9-]*)|#([_a-z][_a-z0-9-]*)|([a-z0-9]+)/i
 ```
