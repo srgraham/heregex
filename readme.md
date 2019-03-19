@@ -2,7 +2,7 @@
 ES6 tagged template to make regular expressions more easily readable.
 
 Add comments using the `#` character prefixed with a space. All whitespace gets
-removed (so use \s for actual whitespace matching). Any flags go in `${'gim'}`
+removed (so use `\s` for actual whitespace matching). Any flags go in `${'gim'}`
 at the end of the string.
 
 
@@ -83,7 +83,7 @@ let regex_basic_css_selector = heregex`
 ```
 which evaluates to:
 ```js
-/\.([_a-z][_a-z0-9-]*)|#([_a-z][_a-z0-9-]*)|([a-z0-9]+)/i
+/^\.([_a-z][_a-z0-9-]*)|^#([_a-z][_a-z0-9-]*)|^([a-z0-9]+)/i
 ```
 
 
